@@ -9,6 +9,7 @@
 // Buy me a ko-fi:  https://ko-fi.com/StewartLynch
 
 import Foundation
+import MarkCodable
 
 class DataStore: ObservableObject {
     @Published var parents: [Parent] = []
@@ -48,10 +49,19 @@ class DataStore: ObservableObject {
     
     func save() {
         // JSON
+//        do {
+//            let jsonURL = URL.documentsDirectory.appending(path: "Family.json")
+//            let parentsData = try JSONEncoder().encode(parents)
+//            try parentsData.write(to: jsonURL)
+//        } catch {
+//            print(error.localizedDescription)
+//        }
+        
+        // MarkDown
         do {
-            let jsonURL = URL.documentsDirectory.appending(path: "Family.json")
-            let parentsData = try JSONEncoder().encode(parents)
-            try parentsData.write(to: jsonURL)
+            let markDownURL = URL.documentsDirectory.appending(path: "Family.md")
+            let parentString = try MarkEncoder().encode(parents)
+            try parentString.write(to: markDownURL, atomically: true, encoding: .utf8)
         } catch {
             print(error.localizedDescription)
         }
@@ -59,11 +69,22 @@ class DataStore: ObservableObject {
     
     func loadFamilies() {
         // JSON
-        let jsonURL = URL.documentsDirectory.appending(path: "Family.json")
-        if FileManager().fileExists(atPath: jsonURL.path) {
+//        let jsonURL = URL.documentsDirectory.appending(path: "Family.json")
+//        if FileManager().fileExists(atPath: jsonURL.path) {
+//            do {
+//                let jsondata = try Data(contentsOf: jsonURL)
+//                parents = try JSONDecoder().decode([Parent].self, from: jsondata)
+//            } catch {
+//                print(error.localizedDescription)
+//            }
+//        }
+        
+        // MarkDown
+        let markDownURL = URL.documentsDirectory.appending(path: "Family.md")
+        if FileManager().fileExists(atPath: markDownURL.path) {
             do {
-                let jsondata = try Data(contentsOf: jsonURL)
-                parents = try JSONDecoder().decode([Parent].self, from: jsondata)
+                let markDownString = try String(contentsOf: markDownURL)
+                parents = try MarkDecoder().decode([Parent].self, from: markDownString)
             } catch {
                 print(error.localizedDescription)
             }

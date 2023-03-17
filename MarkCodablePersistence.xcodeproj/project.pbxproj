@@ -16,6 +16,7 @@
 		BB62D01B2955120B00BA139B /* NewEntityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB62D01A2955120B00BA139B /* NewEntityView.swift */; };
 		BB62D020295520EF00BA139B /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB62D01F295520EF00BA139B /* DataStore.swift */; };
 		BB72BC512955719900B87456 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB72BC502955719900B87456 /* Entity.swift */; };
+		E4A7B8F029C5252200E1F24C /* MarkCodable in Frameworks */ = {isa = PBXBuildFile; productRef = E4A7B8EF29C5252200E1F24C /* MarkCodable */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4A7B8F029C5252200E1F24C /* MarkCodable in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,6 +111,7 @@
 			);
 			name = MarkCodablePersistence;
 			packageProductDependencies = (
+				E4A7B8EF29C5252200E1F24C /* MarkCodable */,
 			);
 			productName = "MarkCodable Persistence";
 			productReference = BB62D0052954E77F00BA139B /* MarkCodablePersistence.app */;
@@ -139,6 +142,7 @@
 			);
 			mainGroup = BB62CFFC2954E77F00BA139B;
 			packageReferences = (
+				E4A7B8EE29C5252200E1F24C /* XCRemoteSwiftPackageReference "MarkCodable" */,
 			);
 			productRefGroup = BB62D0062954E77F00BA139B /* Products */;
 			projectDirPath = "";
@@ -377,6 +381,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E4A7B8EE29C5252200E1F24C /* XCRemoteSwiftPackageReference "MarkCodable" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/MarkCodable/MarkCodable";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E4A7B8EF29C5252200E1F24C /* MarkCodable */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E4A7B8EE29C5252200E1F24C /* XCRemoteSwiftPackageReference "MarkCodable" */;
+			productName = MarkCodable;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = BB62CFFD2954E77F00BA139B /* Project object */;
 }
