@@ -8,6 +8,10 @@
 // Subscribe on YouTube: https://youTube.com/@StewartLynch
 // Buy me a ko-fi:  https://ko-fi.com/StewartLynch
 
+// Film: https://www.youtube.com/watch?v=8D8pb3ycdqw&ab_channel=StewartLynch
+// MarkCodable Package: https://github.com/MarkCodable/MarkCodable
+// MarkText program to read MarkCodable files: https://github.com/marktext/marktext
+
 import SwiftUI
 
 struct FamilyView: View {
