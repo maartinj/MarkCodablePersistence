@@ -10,7 +10,7 @@
 
 import SwiftUI
 
-struct Parent: Identifiable {
+struct Parent: Identifiable, Codable {
     var id = UUID().uuidString
     var firstName: String
     var lastName: String
@@ -18,7 +18,7 @@ struct Parent: Identifiable {
     var address: Address
 }
 
-struct Address {
+struct Address: Codable {
     var city: String
     var provState: String
 }

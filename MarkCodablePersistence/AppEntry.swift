@@ -17,6 +17,9 @@ struct AppEntry: App {
         WindowGroup {
             FamilyView()
                 .environmentObject(store)
+                .onAppear {
+                    print(URL.documentsDirectory.path)
+                }
         }
     }
 }
